@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31727.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KanbanBoardSample", "KanbanBoardSample\KanbanBoardSample.csproj", "{DA72477F-BEDE-4A86-AB31-C62B61256E6F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KanbanBoardGanttChartIntegrationSample", "KanbanBoardGanttChartIntegrationSample\KanbanBoardGanttChartIntegrationSample.csproj", "{B0FE38EB-E6C6-46DA-B804-1D2AF81CC738}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KanbanBoardCustomAppearanceSample", "KanbanBoardCustomAppearanceSample\KanbanBoardCustomAppearanceSample.csproj", "{672346A5-8C6B-4797-906A-05B04DC25688}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KanbanBoardCustomTemplatesSample", "KanbanBoardCustomTemplatesSample\KanbanBoardCustomTemplatesSample.csproj", "{1317A10E-AF53-43B9-8BDD-5D43E5DBA61E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA72477F-BEDE-4A86-AB31-C62B61256E6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA72477F-BEDE-4A86-AB31-C62B61256E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA72477F-BEDE-4A86-AB31-C62B61256E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA72477F-BEDE-4A86-AB31-C62B61256E6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0FE38EB-E6C6-46DA-B804-1D2AF81CC738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0FE38EB-E6C6-46DA-B804-1D2AF81CC738}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0FE38EB-E6C6-46DA-B804-1D2AF81CC738}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0FE38EB-E6C6-46DA-B804-1D2AF81CC738}.Release|Any CPU.Build.0 = Release|Any CPU
+		{672346A5-8C6B-4797-906A-05B04DC25688}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{672346A5-8C6B-4797-906A-05B04DC25688}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{672346A5-8C6B-4797-906A-05B04DC25688}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{672346A5-8C6B-4797-906A-05B04DC25688}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1317A10E-AF53-43B9-8BDD-5D43E5DBA61E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1317A10E-AF53-43B9-8BDD-5D43E5DBA61E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1317A10E-AF53-43B9-8BDD-5D43E5DBA61E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1317A10E-AF53-43B9-8BDD-5D43E5DBA61E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC95C31E-410B-4451-B40F-060A635C11F3}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,20 @@
+﻿<Window x:Class="KanbanBoardCustomAppearanceSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KanbanBoardCustomAppearanceSample"
+        xmlns:kl="clr-namespace:KanbanLibrary;assembly=KanbanLibrary"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <!-- More appearance settings are defined in code behind. -->
+        <kl:KanbanBoard Name="KanbanBoard"
+                        Background="AliceBlue" ItemAreaBackground="Beige"
+                        BorderBrush="Beige" BorderThickness="5" 
+                        ItemBorderBrush="BurlyWood" ItemBorderThickness="2"
+                        FontFamily="Courier New" FontSize="14"
+                        AreNewItemButtonsHidden="True"
+                        AreEditGroupButtonsHidden="True" AreEditItemButtonsHidden="True"/>
+    </Grid>
+</Window>
