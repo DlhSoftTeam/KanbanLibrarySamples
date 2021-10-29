@@ -68,7 +68,7 @@
         <DataTemplate x:Key="CustomType2FullTemplate" DataType="{x:Type kl:KanbanItem}">
             <Border Background="White" BorderBrush="Silver" BorderThickness="1" CornerRadius="8" Padding="4">
                 <StackPanel>
-                    <Grid VerticalAlignment="Top" Cursor="Hand" Margin="-4">
+                    <Grid Name="PART_KanbanHandle" VerticalAlignment="Top" Cursor="Hand" Margin="-4">
                         <Rectangle Fill="Olive" Height="8" RadiusX="8" RadiusY="8"/>
                         <Rectangle Fill="Olive" Height="4" VerticalAlignment="Bottom"/>
                     </Grid>
