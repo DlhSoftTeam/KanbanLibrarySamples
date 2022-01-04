@@ -35,8 +35,8 @@ namespace KanbanBoardCustomTemplatesSample
             var resource2 = new KanbanResource { Content = "Resource 2", ImageSource = new BitmapImage(new Uri("pack://application:,,,/KanbanBoardCustomTemplatesSample;component/Images/Resource2.png", UriKind.RelativeOrAbsolute)) };
             var resources = new ObservableCollection<KanbanResource> { resource1, resource2 };
 
-            var group1 = new KanbanGroup { Content = "Story 1", State = state2, AssignedResource = resource1 };
-            var group2 = new KanbanGroup { Content = "Story 2", State = state3, AssignedResource = resource2 };
+            var group1 = new KanbanGroup { Content = "Story 1", State = state2, AssignedResources = new ObservableCollection<KanbanResource> { resource1 } };
+            var group2 = new KanbanGroup { Content = "Story 2", State = state3, AssignedResources = new ObservableCollection<KanbanResource> { resource2 } };
             var groups = new ObservableCollection<KanbanGroup> { group1, group2 };
 
             // Customize standard item templates.
@@ -49,15 +49,15 @@ namespace KanbanBoardCustomTemplatesSample
 
             var items = new ObservableCollection<KanbanItem>
             {
-                new KanbanItem { Content = "Task 1", Group = group1, State = state1, AssignedResource = resource1 },
-                new KanbanItem { Content = "Task 2", Group = group1, State = state2, AssignedResource = resource1, ItemType = customType2 },
-                new KanbanItem { Content = "Bug 1", Group = group1, State = state2, AssignedResource = resource1, ItemType = KanbanBoard.BugItemType },
-                new KanbanItem { Content = "Task 3", Group = group1, State = state1, AssignedResource = resource2, ItemType = customType1 },
-                new KanbanItem { Content = "Task 4", Group = group1, State = state1, AssignedResource = resource1, ItemType = customType2 },
-                new KanbanItem { Content = "Task 5", Group = group2, State = state1, AssignedResource = resource2 },
-                new KanbanItem { Content = "Task 6", Group = group2, State = state2, AssignedResource = resource2 },
-                new KanbanItem { Content = "Task 7", Group = group2, State = state2, AssignedResource = resource1 },
-                new KanbanItem { Content = "Task 8", Group = group2, State = state3, AssignedResource = resource2 },
+                new KanbanItem { Content = "Task 1", Group = group1, State = state1, AssignedResources = new ObservableCollection<KanbanResource> { resource1 } },
+                new KanbanItem { Content = "Task 2", Group = group1, State = state2, AssignedResources = new ObservableCollection<KanbanResource> { resource1 }, ItemType = customType2 },
+                new KanbanItem { Content = "Bug 1", Group = group1, State = state2, AssignedResources = new ObservableCollection<KanbanResource> { resource1 }, ItemType = KanbanBoard.BugItemType },
+                new KanbanItem { Content = "Task 3", Group = group1, State = state1, AssignedResources = new ObservableCollection<KanbanResource> { resource2 }, ItemType = customType1 },
+                new KanbanItem { Content = "Task 4", Group = group1, State = state1, AssignedResources = new ObservableCollection<KanbanResource> { resource1 }, ItemType = customType2 },
+                new KanbanItem { Content = "Task 5", Group = group2, State = state1, AssignedResources = new ObservableCollection<KanbanResource> { resource2 } },
+                new KanbanItem { Content = "Task 6", Group = group2, State = state2, AssignedResources = new ObservableCollection<KanbanResource> { resource2 } },
+                new KanbanItem { Content = "Task 7", Group = group2, State = state2, AssignedResources = new ObservableCollection<KanbanResource> { resource1 } },
+                new KanbanItem { Content = "Task 8", Group = group2, State = state3, AssignedResources = new ObservableCollection<KanbanResource> { resource2 } },
             };
 
             items[1].Tag = new TimeInterval { Start = DateTime.Today, Finish = DateTime.Today.AddDays(7) };
@@ -69,7 +69,7 @@ namespace KanbanBoardCustomTemplatesSample
 
             KanbanBoard.NewItemAdded += (sender, e) =>
             {
-                e.Item.AssignedResource = resource1;
+                e.Item.AssignedResources = new ObservableCollection<KanbanResource> { resource1 };
             };
 
             KanbanBoard.EditingItem += (sender, e) =>

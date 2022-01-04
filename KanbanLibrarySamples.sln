@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KanbanBoardGanttChartIntegr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KanbanBoardCustomAppearanceSample", "KanbanBoardCustomAppearanceSample\KanbanBoardCustomAppearanceSample.csproj", "{672346A5-8C6B-4797-906A-05B04DC25688}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KanbanBoardCustomTemplatesSample", "KanbanBoardCustomTemplatesSample\KanbanBoardCustomTemplatesSample.csproj", "{1317A10E-AF53-43B9-8BDD-5D43E5DBA61E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KanbanBoardCustomTemplatesSample", "KanbanBoardCustomTemplatesSample\KanbanBoardCustomTemplatesSample.csproj", "{1317A10E-AF53-43B9-8BDD-5D43E5DBA61E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
