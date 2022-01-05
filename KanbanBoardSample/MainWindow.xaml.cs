@@ -75,6 +75,7 @@ namespace KanbanBoardSample
                 Console.WriteLine("A new item was created.");
             };
 
+            KanbanBoard.UsePopupMenus = false;
             KanbanBoard.EditItemButtonContent = "×";
             KanbanBoard.EditItemButtonToolTipContent = "Delete item";
             KanbanBoard.EditingItem += (sender, e) =>

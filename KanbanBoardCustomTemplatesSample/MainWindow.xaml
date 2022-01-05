@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:KanbanBoardCustomTemplatesSample"
         xmlns:kl="clr-namespace:KanbanLibrary;assembly=KanbanLibrary"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="480" Width="800">
     <Window.Resources>
         <DataTemplate x:Key="StateTemplate" DataType="{x:Type kl:KanbanState}">
             <Grid>
@@ -30,7 +30,7 @@
         </DataTemplate>
         <DataTemplate x:Key="TaskTemplate" DataType="{x:Type kl:KanbanItem}">
             <StackPanel Orientation="Horizontal">
-                <Image Source="{Binding AssignedResource.ImageSource}" Margin="2" Width="20" Height="20">
+                <Image Source="{Binding AssignedResources[0].ImageSource}" Margin="2" Width="20" Height="20">
                     <Image.Clip>
                         <EllipseGeometry Center="10,10" RadiusX="8" RadiusY="8"/>
                     </Image.Clip>
@@ -42,7 +42,7 @@
         </DataTemplate>
         <DataTemplate x:Key="BugTemplate" DataType="{x:Type kl:KanbanItem}">
             <StackPanel Orientation="Horizontal">
-                <Image Source="{Binding AssignedResource.ImageSource}" Margin="2" Width="20" Height="20">
+                <Image Source="{Binding AssignedResources[0].ImageSource}" Margin="2" Width="20" Height="20">
                     <Image.Clip>
                         <EllipseGeometry Center="10,10" RadiusX="8" RadiusY="8"/>
                     </Image.Clip>
@@ -79,7 +79,7 @@
                         <DatePicker SelectedDate="{Binding Tag.Start}" ToolTip="Start date" BorderThickness="0" Background="Transparent" Margin="2"/>
                         <TextBlock Text="-" Margin="0,2" VerticalAlignment="Center"/>
                         <DatePicker SelectedDate="{Binding Tag.Finish}" ToolTip="Finish date" BorderThickness="0" Background="Transparent" Margin="2"/>
-                        <Button Name="PART_KanbanButton" Content="Open" FontSize="11" Padding="2,1" Margin="2"/>
+                        <Button Name="PART_KanbanButton" Content="Open" FontSize="11" Padding="2,1" Margin="2" Background="#80f0f0f0" Width="120"/>
                     </WrapPanel>
                 </StackPanel>
             </Border>

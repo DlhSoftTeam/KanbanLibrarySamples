@@ -72,6 +72,7 @@ namespace KanbanBoardCustomTemplatesSample
                 e.Item.AssignedResources = new ObservableCollection<KanbanResource> { resource1 };
             };
 
+            KanbanBoard.UsePopupMenus = false;
             KanbanBoard.EditingItem += (sender, e) =>
             {
                 MessageBox.Show("Editing item " + e.Item.Content, "Kanban");
