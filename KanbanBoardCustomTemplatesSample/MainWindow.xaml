@@ -24,8 +24,8 @@
             </DataTemplate.Triggers>
         </DataTemplate>
         <DataTemplate x:Key="GroupTemplate" DataType="{x:Type kl:KanbanGroup}">
-            <Border Background="AliceBlue" Padding="4" CornerRadius="4" Margin="0,-4">
-                <TextBlock Text="{Binding Content}"/>
+            <Border Background="Silver" Padding="4" CornerRadius="4">
+                <TextBlock Text="{Binding Content}" Foreground="White" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
             </Border>
         </DataTemplate>
         <DataTemplate x:Key="TaskTemplate" DataType="{x:Type kl:KanbanItem}">
