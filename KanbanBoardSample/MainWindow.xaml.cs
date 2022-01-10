@@ -28,8 +28,11 @@ namespace KanbanBoardSample
 
             var state1 = new KanbanState { Content = "New" };
             var state2 = new KanbanState { Content = "In progress", AreNewItemButtonsHidden = true };
-            var state3 = new KanbanState { Content = "Done", IsCollapsedByDefaultForGroups = true, AreNewItemButtonsHidden = true };
-            var states = new ObservableCollection<KanbanState> { state1, state2, state3 };
+            var state3 = new KanbanState { Content = "In review", AreNewItemButtonsHidden = true };
+            var state4 = new KanbanState { Content = "Ready to test", AreNewItemButtonsHidden = true };
+            var state5 = new KanbanState { Content = "In testing", AreNewItemButtonsHidden = true };
+            var state6 = new KanbanState { Content = "Done", IsCollapsedByDefaultForGroups = true, AreNewItemButtonsHidden = true };
+            var states = new ObservableCollection<KanbanState> { state1, state2, state3, state4, state5, state6 };
 
             var resource1 = new KanbanResource { Content = "Resource 1", ImageSource = new BitmapImage(new Uri("pack://application:,,,/KanbanBoardSample;component/Images/Resource1.png", UriKind.RelativeOrAbsolute)) };
             var resource2 = new KanbanResource { Content = "Resource 2", ImageSource = new BitmapImage(new Uri("pack://application:,,,/KanbanBoardSample;component/Images/Resource2.png", UriKind.RelativeOrAbsolute)) };
