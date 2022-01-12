@@ -28,19 +28,21 @@ namespace KanbanBoardSample
 
             var state1 = new KanbanState { Content = "New" };
             var state2 = new KanbanState { Content = "In progress", AreNewItemButtonsHidden = true };
-            var state3 = new KanbanState { Content = "In review", AreNewItemButtonsHidden = true };
-            var state4 = new KanbanState { Content = "Ready to test", AreNewItemButtonsHidden = true };
-            var state5 = new KanbanState { Content = "In testing", AreNewItemButtonsHidden = true };
-            var state6 = new KanbanState { Content = "Done", IsCollapsedByDefaultForGroups = true, AreNewItemButtonsHidden = true };
-            var states = new ObservableCollection<KanbanState> { state1, state2, state3, state4, state5, state6 };
+            var state3 = new KanbanState { Content = "Ready to test", AreNewItemButtonsHidden = true };
+            var state4 = new KanbanState { Content = "In testing", AreNewItemButtonsHidden = true };
+            var state5 = new KanbanState { Content = "Done", IsCollapsedByDefaultForGroups = true, AreNewItemButtonsHidden = true };
+            var states = new ObservableCollection<KanbanState> { state1, state2, state3, state4, state5 };
 
-            var resource1 = new KanbanResource { Content = "Resource 1", ImageSource = new BitmapImage(new Uri("pack://application:,,,/KanbanBoardSample;component/Images/Resource1.png", UriKind.RelativeOrAbsolute)) };
-            var resource2 = new KanbanResource { Content = "Resource 2", ImageSource = new BitmapImage(new Uri("pack://application:,,,/KanbanBoardSample;component/Images/Resource2.png", UriKind.RelativeOrAbsolute)) };
-            var resources = new ObservableCollection<KanbanResource> { resource1, resource2 };
+            var resource1 = new KanbanResource { Content = "Clarissa Candelaria", ImageSource = new BitmapImage(new Uri("pack://application:,,,/KanbanBoardSample;component/Images/Resource1.png", UriKind.RelativeOrAbsolute)) };
+            var resource2 = new KanbanResource { Content = "Tyson Lamberson", ImageSource = new BitmapImage(new Uri("pack://application:,,,/KanbanBoardSample;component/Images/Resource2.png", UriKind.RelativeOrAbsolute)) };
+            var resource3 = new KanbanResource { Content = "Joanna Mcamis", ImageSource = new BitmapImage(new Uri("pack://application:,,,/KanbanBoardSample;component/Images/Resource2.png", UriKind.RelativeOrAbsolute)) };
+            var resource4 = new KanbanResource { Content = "Jed Markovitz", ImageSource = new BitmapImage(new Uri("pack://application:,,,/KanbanBoardSample;component/Images/Resource2.png", UriKind.RelativeOrAbsolute)) };
+            var resources = new ObservableCollection<KanbanResource> { resource1, resource2, resource3, resource4 };
 
-            var group1 = new KanbanGroup { Content = "Story 1", State = state2, AssignedResources = new ObservableCollection<KanbanResource> { resource1 } };
-            var group2 = new KanbanGroup { Content = "Story 2", State = state3, AssignedResources = new ObservableCollection<KanbanResource> { resource2 } };
-            var groups = new ObservableCollection<KanbanGroup> { group1, group2 };
+            var group1 = new KanbanGroup { Content = "Planning", State = state2, AssignedResources = new ObservableCollection<KanbanResource> { resource1 } };
+            var group2 = new KanbanGroup { Content = "Implementation", State = state3, AssignedResources = new ObservableCollection<KanbanResource> { resource2 } };
+            var group3 = new KanbanGroup { Content = "Marketing", State = state2, AssignedResources = new ObservableCollection<KanbanResource> { resource1 } };
+            var groups = new ObservableCollection<KanbanGroup> { group1, group2, group3 };
 
             var items = new ObservableCollection<KanbanItem>
             {
