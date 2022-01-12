@@ -6,14 +6,23 @@
     <UseWPF>true</UseWPF>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
-	
+
   <ItemGroup>
-	<PackageReference Include="DlhSoft.KanbanLibrary.wpf" Version="4.0.0.14" />
+    <None Remove="Images\Clarissa.png" />
+    <None Remove="Images\Jed.png" />
+    <None Remove="Images\Joanna.png" />
+    <None Remove="Images\Tyson.png" />
   </ItemGroup>
 	
   <ItemGroup>
-    <Resource Include="Images\Resource1.png" />
-    <Resource Include="Images\Resource2.png" />
+	<PackageReference Include="DlhSoft.KanbanLibrary.wpf" Version="4.0.0.15" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <Resource Include="Images\Clarissa.png" />
+    <Resource Include="Images\Jed.png" />
+    <Resource Include="Images\Joanna.png" />
+    <Resource Include="Images\Tyson.png" />
   </ItemGroup>
 
 </Project>
