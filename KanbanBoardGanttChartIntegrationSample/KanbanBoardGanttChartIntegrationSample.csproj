@@ -9,7 +9,7 @@
 
   <ItemGroup>
 	<PackageReference Include="DlhSoft.GanttChartLightLibrary" Version="4.3.45.10" />
-    <PackageReference Include="DlhSoft.KanbanLibrary.wpf" Version="4.0.0.15" />
+    <PackageReference Include="DlhSoft.KanbanLibrary.wpf" Version="4.0.0.17" />
   </ItemGroup>
 
 </Project>
