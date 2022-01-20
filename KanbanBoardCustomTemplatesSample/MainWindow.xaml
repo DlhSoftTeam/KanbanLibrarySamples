@@ -29,61 +29,70 @@
             </Border>
         </DataTemplate>
         <DataTemplate x:Key="TaskTemplate" DataType="{x:Type kl:KanbanItem}">
-            <StackPanel Orientation="Horizontal">
-                <Image Source="{Binding AssignedResources[0].ImageSource}" Margin="2" Width="20" Height="20">
+            <DockPanel>
+                <Image DockPanel.Dock="Left" Source="{Binding AssignedResources[0].ImageSource}" Margin="2" Width="20" Height="20">
                     <Image.Clip>
                         <EllipseGeometry Center="10,10" RadiusX="8" RadiusY="8"/>
                     </Image.Clip>
                 </Image>
-                <Border Background="LightYellow" Padding="4" CornerRadius="4" HorizontalAlignment="Left">
+                <Border Background="LightYellow" Padding="4" CornerRadius="4" Margin="0,0,30,0">
                     <TextBox Text="{Binding Content}" BorderThickness="0" Background="Transparent"/>
                 </Border>
-            </StackPanel>
+            </DockPanel>
         </DataTemplate>
         <DataTemplate x:Key="BugTemplate" DataType="{x:Type kl:KanbanItem}">
-            <StackPanel Orientation="Horizontal">
-                <Image Source="{Binding AssignedResources[0].ImageSource}" Margin="2" Width="20" Height="20">
+            <DockPanel>
+                <Image DockPanel.Dock="Left" Source="{Binding AssignedResources[0].ImageSource}" Margin="2" Width="20" Height="20">
                     <Image.Clip>
                         <EllipseGeometry Center="10,10" RadiusX="8" RadiusY="8"/>
                     </Image.Clip>
                 </Image>
+                <Border DockPanel.Dock="Right" Background="Red" TextElement.Foreground="White" Padding="4" CornerRadius="4" Margin="4,0,30,0">
+                    <TextBlock Text="Bug"/>
+                </Border>
                 <Border Background="Pink" Padding="4" CornerRadius="4" HorizontalAlignment="Left">
                     <TextBox Text="{Binding Content}" BorderThickness="0" Background="Transparent"/>
                 </Border>
-                <Border Background="Red" TextElement.Foreground="White" Padding="4" CornerRadius="4" HorizontalAlignment="Left" Margin="4,0">
-                    <TextBlock Text="Bug"/>
-                </Border>
-            </StackPanel>
+            </DockPanel>
         </DataTemplate>
         <!-- Template only the contents within the Kanban item's tile. -->
         <DataTemplate x:Key="GreenTaskContentTemplate" DataType="{x:Type kl:KanbanItem}">
-            <StackPanel Orientation="Horizontal">
-                <Border Background="Green" TextElement.Foreground="White" Padding="4" CornerRadius="4" HorizontalAlignment="Left" Margin="4,0">
-                    <TextBlock Text="{Binding AssignedResource.Content}"/>
+            <DockPanel>
+                <Border DockPanel.Dock="Left" Background="Green" TextElement.Foreground="White" Padding="4" CornerRadius="4" HorizontalAlignment="Left" Margin="4,0">
+                    <TextBlock Text="{Binding AssignedResources[0].Content}" MaxWidth="60" TextTrimming="CharacterEllipsis"/>
                 </Border>
-                <Border Background="LightGreen" Padding="4" CornerRadius="4" HorizontalAlignment="Left">
+                <Border Background="LightGreen" Padding="4" CornerRadius="4" Margin="0,0,30,0">
                     <TextBox Text="{Binding Content}" BorderThickness="0" Background="Transparent"/>
                 </Border>
-            </StackPanel>
+            </DockPanel>
         </DataTemplate>
         <!-- Or redesign the full template of the Kanban item. -->
         <DataTemplate x:Key="SpecialTaskTemplate" DataType="{x:Type kl:KanbanItem}">
             <Border Background="White" BorderBrush="Silver" BorderThickness="1" CornerRadius="8" Padding="4">
-                <StackPanel>
-                    <Grid Name="PART_KanbanHandle" VerticalAlignment="Top" Cursor="Hand" Margin="-4">
+                <DockPanel>
+                    <Grid Name="PART_KanbanHandle" DockPanel.Dock="Top" Cursor="Hand" Margin="-4">
                         <Rectangle Fill="Olive" Height="8" RadiusX="8" RadiusY="8"/>
                         <Rectangle Fill="Olive" Height="4" VerticalAlignment="Bottom"/>
                     </Grid>
                     <WrapPanel Margin="0,8,0,0">
                         <Border Background="LightGreen" Padding="4" CornerRadius="4" Margin="2">
-                            <TextBox Text="{Binding Content}" BorderThickness="0" Background="Transparent"/>
+                            <TextBox Text="{Binding Content}" BorderThickness="0" Background="Transparent" MaxWidth="120"/>
                         </Border>
                         <DatePicker SelectedDate="{Binding Tag.Start}" ToolTip="Start date" BorderThickness="0" Background="Transparent" Margin="2"/>
                         <TextBlock Text="-" Margin="0,2" VerticalAlignment="Center"/>
                         <DatePicker SelectedDate="{Binding Tag.Finish}" ToolTip="Finish date" BorderThickness="0" Background="Transparent" Margin="2"/>
-                        <Button Name="PART_KanbanButton" Content="Open" FontSize="11" Padding="2,1" Margin="2" Background="#80f0f0f0" Width="120"/>
+                        <Button Name="PART_KanbanButton" Content="Open" FontSize="10" Padding="3" Margin="2" Background="#80f08080" Width="60">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid Margin="{TemplateBinding Padding}">
+                                        <Ellipse Fill="{TemplateBinding Background}"/>
+                                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
                     </WrapPanel>
-                </StackPanel>
+                </DockPanel>
             </Border>
         </DataTemplate>
         <ControlTemplate x:Key="NewItemButtonTemplate" TargetType="Button">

@@ -13,7 +13,8 @@
                         Background="Beige" ItemAreaBackground="#40f0c0c0"
                         BorderBrush="BurlyWood" BorderThickness="5" Padding="5"
                         ItemBorderBrush="BurlyWood" ItemBorderThickness="2"
-                        ItemAreaHoveringBackground="#60a08000" ItemAreaMoveIndicatorBrush="#a08000"
+                        StateHoveringBackground="#30a08000" ItemHoveringBackground="#60a08000" 
+                        ItemMoveIndicatorBrush="#a08000"
                         AreNewItemButtonsHidden="True"
                         AreEditGroupButtonsHidden="True" AreEditItemButtonsHidden="True"/>
     </Grid>
