@@ -17,14 +17,14 @@
         <pdgcc:GanttChartDataGrid Name="GanttChartDataGrid" Grid.Row="0">
             <pdgcc:GanttChartDataGrid.Items>
                 <!-- Some item properties are set in code behind. -->
-                <pdgcc:GanttChartItem Content="Task 1"/>
-                <pdgcc:GanttChartItem Content="Task 1.1" Indentation="1"/>
-                <pdgcc:GanttChartItem Content="Task 1.2" Indentation="1"/>
-                <pdgcc:GanttChartItem Content="Task 2"/>
-                <pdgcc:GanttChartItem Content="Task 2.1" Indentation="1"/>
-                <pdgcc:GanttChartItem Content="Task 2.2" Indentation="1"/>
-                <pdgcc:GanttChartItem Content="Task 2.2.1" Indentation="2"/>
-                <pdgcc:GanttChartItem Content="Task 2.2.2" Indentation="2"/>
+                <pdgcc:GanttChartItem Content="Development"/>
+                <pdgcc:GanttChartItem Content="Architecture" Indentation="1"/>
+                <pdgcc:GanttChartItem Content="App implementation" Indentation="1"/>
+                <pdgcc:GanttChartItem Content="Marketing"/>
+                <pdgcc:GanttChartItem Content="Logo" Indentation="1"/>
+                <pdgcc:GanttChartItem Content="Online" Indentation="1"/>
+                <pdgcc:GanttChartItem Content="Web site" Indentation="2"/>
+                <pdgcc:GanttChartItem Content="Social network" Indentation="2"/>
             </pdgcc:GanttChartDataGrid.Items>
         </pdgcc:GanttChartDataGrid>
         <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="5"/>

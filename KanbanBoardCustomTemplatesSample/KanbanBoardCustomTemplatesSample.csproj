@@ -8,12 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-	<PackageReference Include="DlhSoft.KanbanLibrary.wpf" Version="4.0.0.19" />
+    <None Remove="Images\Clarissa.png" />
+    <None Remove="Images\Tyson.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\Resource1.png" />
-    <Resource Include="Images\Resource2.png" />
+	<PackageReference Include="DlhSoft.KanbanLibrary.wpf" Version="4.0.0.22" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Clarissa.png" />
+    <Resource Include="Images\Tyson.png" />
   </ItemGroup>
 
 </Project>

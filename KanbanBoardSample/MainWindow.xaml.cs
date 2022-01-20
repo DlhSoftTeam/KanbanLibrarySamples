@@ -66,7 +66,7 @@ namespace KanbanBoardSample
             };
 
             // Uncomment the following code lines to load more groups and items.
-            // for (var i = 3; i <= 10; i++)
+            // for (var i = 1; i <= 10; i++)
             // {
             //     var group = new KanbanGroup { Content = "Story " + i, AssignedResource = resource1 };
             //     groups.Add(group);

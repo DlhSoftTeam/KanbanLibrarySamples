@@ -6,13 +6,14 @@
         xmlns:local="clr-namespace:KanbanBoardCustomAppearanceSample"
         xmlns:kl="clr-namespace:KanbanLibrary;assembly=KanbanLibrary"
         mc:Ignorable="d"
-        Title="MainWindow" Height="480" Width="800">
+        Title="MainWindow" Height="500" Width="800">
     <Grid>
         <!-- More appearance settings are defined in code behind. -->
         <kl:KanbanBoard Name="KanbanBoard" FontSize="13"
                         Background="Beige" ItemAreaBackground="#40f0c0c0"
-                        BorderBrush="BurlyWood" BorderThickness="5" 
+                        BorderBrush="BurlyWood" BorderThickness="5" Padding="5"
                         ItemBorderBrush="BurlyWood" ItemBorderThickness="2"
+                        ItemAreaHoveringBackground="#60a08000" ItemAreaMoveIndicatorBrush="#a08000"
                         AreNewItemButtonsHidden="True"
                         AreEditGroupButtonsHidden="True" AreEditItemButtonsHidden="True"/>
     </Grid>

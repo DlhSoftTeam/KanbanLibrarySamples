@@ -55,7 +55,8 @@
                 </Border>
             </StackPanel>
         </DataTemplate>
-        <DataTemplate x:Key="CustomType1Template" DataType="{x:Type kl:KanbanItem}">
+        <!-- Template only the contents within the Kanban item's tile. -->
+        <DataTemplate x:Key="GreenTaskContentTemplate" DataType="{x:Type kl:KanbanItem}">
             <StackPanel Orientation="Horizontal">
                 <Border Background="Green" TextElement.Foreground="White" Padding="4" CornerRadius="4" HorizontalAlignment="Left" Margin="4,0">
                     <TextBlock Text="{Binding AssignedResource.Content}"/>
@@ -65,7 +66,8 @@
                 </Border>
             </StackPanel>
         </DataTemplate>
-        <DataTemplate x:Key="CustomType2FullTemplate" DataType="{x:Type kl:KanbanItem}">
+        <!-- Or redesign the full template of the Kanban item. -->
+        <DataTemplate x:Key="SpecialTaskTemplate" DataType="{x:Type kl:KanbanItem}">
             <Border Background="White" BorderBrush="Silver" BorderThickness="1" CornerRadius="8" Padding="4">
                 <StackPanel>
                     <Grid Name="PART_KanbanHandle" VerticalAlignment="Top" Cursor="Hand" Margin="-4">
@@ -96,7 +98,7 @@
         <kl:KanbanBoard Name="KanbanBoard"
                         StateTemplate="{StaticResource StateTemplate}"
                         GroupTemplate="{StaticResource GroupTemplate}"
-                        EditItemButtonContent="✍️" NewItemButtonContent="Add new item"
+                        EditItemButtonContent="✍️" NewItemButtonContent="Add new task"
                         NewItemButtonTemplate="{StaticResource NewItemButtonTemplate}"
                         EditItemButtonTemplate="{StaticResource EditItemButtonTemplate}"/>
     </Grid>

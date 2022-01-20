@@ -28,18 +28,18 @@ namespace KanbanBoardGanttChartIntegrationSample
             InitializeComponent();
 
             GanttChartItem item0 = GanttChartDataGrid.Items[0];
-            item0.AssignmentsContent = "Resource 1";
+            item0.AssignmentsContent = "Clarissa Candelaria";
 
             GanttChartItem item1 = GanttChartDataGrid.Items[1];
             item1.Start = DateTime.Today.Add(TimeSpan.Parse("08:00:00"));
-            item1.Finish = DateTime.Today.Add(TimeSpan.Parse("16:00:00"));
+            item1.Finish = DateTime.Today.AddDays(3).Add(TimeSpan.Parse("16:00:00"));
             item1.CompletedFinish = DateTime.Today.Add(TimeSpan.Parse("12:00:00"));
-            item1.AssignmentsContent = "Resource 1";
+            item1.AssignmentsContent = "Clarissa Candelaria";
 
             GanttChartItem item2 = GanttChartDataGrid.Items[2];
-            item2.Start = DateTime.Today.AddDays(1).Add(TimeSpan.Parse("08:00:00"));
-            item2.Finish = DateTime.Today.AddDays(2).Add(TimeSpan.Parse("16:00:00"));
-            item2.AssignmentsContent = "Resource 2";
+            item2.Start = DateTime.Today.AddDays(4).Add(TimeSpan.Parse("08:00:00"));
+            item2.Finish = DateTime.Today.AddDays(10).Add(TimeSpan.Parse("16:00:00"));
+            item2.AssignmentsContent = "Tyson Lamberson";
             item2.Predecessors.Add(new PredecessorItem { Item = item1 });
 
             GanttChartItem item3 = GanttChartDataGrid.Items[3];
@@ -47,30 +47,33 @@ namespace KanbanBoardGanttChartIntegrationSample
 
             GanttChartItem item4 = GanttChartDataGrid.Items[4];
             item4.Start = DateTime.Today.Add(TimeSpan.Parse("08:00:00"));
-            item4.Finish = DateTime.Today.AddDays(2).Add(TimeSpan.Parse("12:00:00"));
+            item4.Finish = DateTime.Today.AddDays(4).Add(TimeSpan.Parse("12:00:00"));
+            item4.AssignmentsContent = "Joanna Mcamis";
 
             GanttChartItem item6 = GanttChartDataGrid.Items[6];
             item6.Start = DateTime.Today.Add(TimeSpan.Parse("08:00:00"));
-            item6.Finish = DateTime.Today.AddDays(3).Add(TimeSpan.Parse("12:00:00"));
+            item6.Finish = DateTime.Today.AddDays(5).Add(TimeSpan.Parse("12:00:00"));
+            item6.AssignmentsContent = "Jed Markovitz";
 
             GanttChartItem item7 = GanttChartDataGrid.Items[7];
-            item7.Start = DateTime.Today.AddDays(4);
+            item7.Start = DateTime.Today.AddDays(6);
             item7.IsMilestone = true;
             item7.Predecessors.Add(new PredecessorItem { Item = item4 });
             item7.Predecessors.Add(new PredecessorItem { Item = item6 });
+            item7.AssignmentsContent = "Joanna Mcamis";
 
-            for (int i = 3; i <= 25; i++)
-            {
-                GanttChartDataGrid.Items.Add(
-                    new GanttChartItem
-                    {
-                        Content = "Task " + i,
-                        Indentation = i % 3 == 0 ? 0 : 1,
-                        Start = DateTime.Today.AddDays(i <= 8 ? (i - 4) * 2 : i - 8),
-                        Finish = DateTime.Today.AddDays((i <= 8 ? (i - 4) * 2 + (i > 8 ? 6 : 1) : i - 2) + 2),
-                        CompletedFinish = DateTime.Today.AddDays(i <= 8 ? (i - 4) * 2 : i - 8).AddDays(i % 6 == 4 ? 3 : 0)
-                    });
-            }
+            // for (int i = 1; i <= 25; i++)
+            // {
+            //     GanttChartDataGrid.Items.Add(
+            //         new GanttChartItem
+            //         {
+            //             Content = "Task " + i,
+            //             Indentation = i % 3 == 0 ? 0 : 1,
+            //             Start = DateTime.Today.AddDays(i <= 8 ? (i - 4) * 2 : i - 8),
+            //             Finish = DateTime.Today.AddDays((i <= 8 ? (i - 4) * 2 + (i > 8 ? 6 : 1) : i - 2) + 2),
+            //             CompletedFinish = DateTime.Today.AddDays(i <= 8 ? (i - 4) * 2 : i - 8).AddDays(i % 6 == 4 ? 3 : 0)
+            //         });
+            // }
 
             InitializeKanbanBoard();
         }
