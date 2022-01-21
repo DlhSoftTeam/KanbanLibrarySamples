@@ -36,7 +36,7 @@ namespace KanbanBoardSample
             var group1 = new KanbanGroup { Content = "Development", State = state2, Resources = new ObservableCollection<KanbanResource> { resource1, resource2 } };
             var group2 = new KanbanGroup { Content = "Marketing", State = state2, Resources = new ObservableCollection<KanbanResource> { resource3 }, ImageSource = new BitmapImage(new Uri("pack://application:,,,/KanbanBoardSample;component/Images/Marketing.png", UriKind.RelativeOrAbsolute)) };
             var groups = new ObservableCollection<KanbanGroup> { group1, group2 };
-
+            
             var items = new ObservableCollection<KanbanItem>
             {
                 new KanbanItem { Content = "Architecture", Group = group1, State = state5, Resources = new ObservableCollection<KanbanResource> { resource2 }, ImageSource = new BitmapImage(new Uri("pack://application:,,,/KanbanBoardSample;component/Images/Architecture.png", UriKind.RelativeOrAbsolute)) },
