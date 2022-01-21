@@ -34,15 +34,15 @@ namespace KanbanBoardSample
             var resources = new ObservableCollection<KanbanResource> { resource1, resource2, resource3, resource4 };
 
             var group1 = new KanbanGroup { Content = "Development", State = state2, Resources = new ObservableCollection<KanbanResource> { resource1, resource2 } };
-            var group2 = new KanbanGroup { Content = "Marketing", State = state2, Resources = new ObservableCollection<KanbanResource> { resource3 } };
+            var group2 = new KanbanGroup { Content = "Marketing", State = state2, Resources = new ObservableCollection<KanbanResource> { resource3 }, ImageSource = new BitmapImage(new Uri("pack://application:,,,/KanbanBoardSample;component/Images/Marketing.png", UriKind.RelativeOrAbsolute)) };
             var groups = new ObservableCollection<KanbanGroup> { group1, group2 };
 
             var items = new ObservableCollection<KanbanItem>
             {
-                new KanbanItem { Content = "Architecture", Group = group1, State = state5, Resources = new ObservableCollection<KanbanResource> { resource2 } },
-                new KanbanItem { Content = "Date-times", Group = group1, State = state4, Resources = new ObservableCollection<KanbanResource> { resource3 } },
+                new KanbanItem { Content = "Architecture", Group = group1, State = state5, Resources = new ObservableCollection<KanbanResource> { resource2 }, ImageSource = new BitmapImage(new Uri("pack://application:,,,/KanbanBoardSample;component/Images/Architecture.png", UriKind.RelativeOrAbsolute)) },
+                new KanbanItem { Content = "Date-times", Group = group1, State = state4, Resources = new ObservableCollection<KanbanResource> { resource3 }, ImageSource = new BitmapImage(new Uri("pack://application:,,,/KanbanBoardSample;component/Images/DateTimes.png", UriKind.RelativeOrAbsolute)) },
                 new KanbanItem { Content = "Schedules", Group = group1, State = state2, Resources = new ObservableCollection<KanbanResource> { resource3, resource4 } },
-                new KanbanItem { Content = "Weekend issue", Group = group1, State = state2, Resources = new ObservableCollection<KanbanResource> { resource4 }, ItemType = KanbanBoard.BugItemType },
+                new KanbanItem { Content = "Weekend issue", Group = group1, State = state2, Resources = new ObservableCollection<KanbanResource> { resource4 }, ItemType = KanbanBoard.BugItemType, ImageSource = new BitmapImage(new Uri("pack://application:,,,/KanbanBoardSample;component/Images/Bug.png", UriKind.RelativeOrAbsolute)) },
                 new KanbanItem { Content = "Diagram", Group = group1, State = state2, Resources = new ObservableCollection<KanbanResource> { resource1 } },
                 new KanbanItem { Content = "Bars", Group = group1, State = state1, Resources = new ObservableCollection<KanbanResource> { resource1 } },
                 new KanbanItem { Content = "Nonworking time highlighting", Group = group1, State = state3, Resources = new ObservableCollection<KanbanResource> { resource4 } },
@@ -54,7 +54,7 @@ namespace KanbanBoardSample
                 new KanbanItem { Content = "Logo", Group = group2, State = state2, Resources = new ObservableCollection<KanbanResource> { resource3 } },
                 new KanbanItem { Content = "Sample apps", Group = group2, State = state3, Resources = new ObservableCollection<KanbanResource> { resource4 } },
                 new KanbanItem { Content = "Screenshots", Group = group2, State = state2, Resources = new ObservableCollection<KanbanResource> { resource4 } },
-                new KanbanItem { Content = "Web site", Group = group2, State = state1, Resources = new ObservableCollection<KanbanResource> { resource2, resource4 } },
+                new KanbanItem { Content = "Web site", Group = group2, State = state1, Resources = new ObservableCollection<KanbanResource> { resource2, resource4 }, ImageSource = new BitmapImage(new Uri("pack://application:,,,/KanbanBoardSample;component/Images/WebSite.png", UriKind.RelativeOrAbsolute)) },
                 new KanbanItem { Content = "Social networking", Group = group2, State = state1, Resources = new ObservableCollection<KanbanResource> { resource1, resource3 } },
             };
 
