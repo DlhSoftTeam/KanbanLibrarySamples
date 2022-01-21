@@ -7,14 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace KanbanBoardGanttChartIntegrationSample
 {
@@ -102,9 +94,9 @@ namespace KanbanBoardGanttChartIntegrationSample
                 });
             }
             KanbanBoard.Groups = groups;
-            KanbanBoard.IsGroupStatusHidden = true;
+            KanbanBoard.IsGroupStateHidden = true;
             KanbanBoard.GroupResourcesVisibility = Visibility.Collapsed;
-            KanbanBoard.CollapsedGroupItemsCountVisibility = Visibility.Visible;
+            KanbanBoard.CollapsedGroupItemCountVisibility = Visibility.Visible;
 
             var resources = new ObservableCollection<KanbanResource>();
             foreach (var resource in GanttChartDataGrid.GetAssignedResources())
@@ -115,7 +107,7 @@ namespace KanbanBoardGanttChartIntegrationSample
                     Tag = resource
                 });
             }
-            KanbanBoard.AssignableResources = resources;
+            KanbanBoard.AvailableResources = resources;
             KanbanBoard.ResourceImageVisibility = Visibility.Collapsed;
 
             var items = new ObservableCollection<KanbanItem>();
@@ -126,7 +118,7 @@ namespace KanbanBoardGanttChartIntegrationSample
                     Content = ganttChartItem.Content,
                     Group = groups.First(g => g.Tag == ganttChartItem.Parent),
                     State = ganttChartItem.CompletedFinish == ganttChartItem.Start ? newState : (ganttChartItem.CompletedFinish == ganttChartItem.Finish ? doneState : inProgressState),
-                    AssignedResources = new ObservableCollection<KanbanResource>(resources.Where(r => r.Tag as string == ganttChartItem.AssignmentsContent as string)),
+                    Resources = new ObservableCollection<KanbanResource>(resources.Where(r => r.Tag as string == ganttChartItem.AssignmentsContent as string)),
                     Tag = ganttChartItem
                 });
             }
@@ -165,7 +157,7 @@ namespace KanbanBoardGanttChartIntegrationSample
                     }
                     break;
                 case nameof(GanttChartItem.AssignmentsContent):
-                    item.AssignedResources = new ObservableCollection<KanbanResource>(KanbanBoard.AssignableResources.Where(r => r.Tag as string == ganttChartItem.AssignmentsContent as string));
+                    item.Resources = new ObservableCollection<KanbanResource>(KanbanBoard.AvailableResources.Where(r => r.Tag as string == ganttChartItem.AssignmentsContent as string));
                     break;
             }
             isDuringInternalPropertyChange = false;
@@ -188,8 +180,8 @@ namespace KanbanBoardGanttChartIntegrationSample
                     else
                         ganttChartItem.Completion = 0.5;
                     break;
-                case nameof(KanbanItem.AssignedResources):
-                    ganttChartItem.AssignmentsContent = string.Join(", ", item.AssignedResources.Select(r => r.Tag as string));
+                case nameof(KanbanItem.Resources):
+                    ganttChartItem.AssignmentsContent = string.Join(", ", item.Resources.Select(r => r.Tag as string));
                     break;
             }
             isDuringInternalPropertyChange = false;
