@@ -30,7 +30,7 @@
         </DataTemplate>
         <DataTemplate x:Key="TaskTemplate" DataType="{x:Type kl:KanbanItem}">
             <DockPanel>
-                <Image DockPanel.Dock="Left" Source="{Binding AssignedResources[0].ImageSource}" Margin="2" Width="20" Height="20">
+                <Image DockPanel.Dock="Left" Source="{Binding Resources[0].ImageSource}" Margin="2" Width="20" Height="20">
                     <Image.Clip>
                         <EllipseGeometry Center="10,10" RadiusX="8" RadiusY="8"/>
                     </Image.Clip>
@@ -42,7 +42,7 @@
         </DataTemplate>
         <DataTemplate x:Key="BugTemplate" DataType="{x:Type kl:KanbanItem}">
             <DockPanel>
-                <Image DockPanel.Dock="Left" Source="{Binding AssignedResources[0].ImageSource}" Margin="2" Width="20" Height="20">
+                <Image DockPanel.Dock="Left" Source="{Binding Resources[0].ImageSource}" Margin="2" Width="20" Height="20">
                     <Image.Clip>
                         <EllipseGeometry Center="10,10" RadiusX="8" RadiusY="8"/>
                     </Image.Clip>
@@ -59,7 +59,7 @@
         <DataTemplate x:Key="GreenTaskContentTemplate" DataType="{x:Type kl:KanbanItem}">
             <DockPanel>
                 <Border DockPanel.Dock="Left" Background="Green" TextElement.Foreground="White" Padding="4" CornerRadius="4" HorizontalAlignment="Left" Margin="4,0">
-                    <TextBlock Text="{Binding AssignedResources[0].Content}" MaxWidth="60" TextTrimming="CharacterEllipsis"/>
+                    <TextBlock Text="{Binding Resources[0].Content}" MaxWidth="60" TextTrimming="CharacterEllipsis"/>
                 </Border>
                 <Border Background="LightGreen" Padding="4" CornerRadius="4" Margin="0,0,30,0">
                     <TextBox Text="{Binding Content}" BorderThickness="0" Background="Transparent"/>
