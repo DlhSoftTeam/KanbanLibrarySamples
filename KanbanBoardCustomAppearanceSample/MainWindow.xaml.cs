@@ -35,8 +35,8 @@ namespace KanbanBoardCustomAppearanceSample
 
             // Customize standard item types.
             KanbanBoard.TaskItemType.HandleBrush = Brushes.LightBlue;
-            KanbanBoard.BugItemType.Background = Brushes.LightYellow;
-            KanbanBoard.BugItemType.HandleBrush = Brushes.Orange;
+            KanbanBoard.BugItemType.Background = new SolidColorBrush(Color.FromRgb(189, 217, 252));
+            KanbanBoard.BugItemType.HandleBrush = new SolidColorBrush(Color.FromRgb(111, 168, 220));
 
             // Also, define a custom item type to be used by some items.
             var customType = new KanbanItemType { Background = Brushes.LightGreen, HandleBrush = Brushes.Green };
