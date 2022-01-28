@@ -10,10 +10,10 @@
     <Grid>
         <!-- More appearance settings are defined in code behind. -->
         <kl:KanbanBoard Name="KanbanBoard" FontSize="13"
-                        Background="Beige" ItemAreaBackground="#40f0c0c0"
-                        BorderBrush="BurlyWood" BorderThickness="5" Padding="5"
-                        ItemBorderBrush="BurlyWood" ItemBorderThickness="2"
-                        StateHoveringBackground="#a07000" GroupHoveringBackground="#a07000" 
+                        Background="#f3f6f4" ItemAreaBackground="#90d9eeff"
+                        BorderBrush="#6485c5" BorderThickness="1" Padding="1"
+                        ItemBorderBrush="#6485c5" ItemBorderThickness="1"
+                        StateHoveringBackground="#e0e0e0" GroupHoveringBackground="#616d85" 
                         ItemMoveIndicatorBrush="#a09020"
                         AreNewItemButtonsHidden="True"
                         AreEditGroupButtonsHidden="True" AreEditItemButtonsHidden="True"/>
