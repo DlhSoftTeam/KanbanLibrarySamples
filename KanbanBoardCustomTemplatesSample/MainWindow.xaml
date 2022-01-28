@@ -15,11 +15,11 @@
             </Grid>
             <DataTemplate.Triggers>
                 <DataTrigger Binding="{Binding Content}" Value="New">
-                    <Setter Property="TextElement.Foreground" Value="Brown"/>
+                    <Setter Property="TextElement.Foreground" Value="#940034"/>
                 </DataTrigger>
                 <DataTrigger Binding="{Binding Content}" Value="Done">
                     <Setter Property="TextElement.FontWeight" Value="Bold"/>
-                    <Setter Property="TextElement.Foreground" Value="Green"/>
+                    <Setter Property="TextElement.Foreground" Value="#426aeb"/>
                 </DataTrigger>
             </DataTemplate.Triggers>
         </DataTemplate>
@@ -35,7 +35,7 @@
                         <EllipseGeometry Center="10,10" RadiusX="8" RadiusY="8"/>
                     </Image.Clip>
                 </Image>
-                <Border Background="LightYellow" Padding="4" CornerRadius="4" Margin="0,0,30,0">
+                <Border Background="#d9edff" Padding="4" CornerRadius="4" Margin="0,0,30,0">
                     <TextBox Text="{Binding Content}" BorderThickness="0" Background="Transparent"/>
                 </Border>
             </DockPanel>
@@ -47,10 +47,10 @@
                         <EllipseGeometry Center="10,10" RadiusX="8" RadiusY="8"/>
                     </Image.Clip>
                 </Image>
-                <Border DockPanel.Dock="Right" Background="Red" TextElement.Foreground="White" Padding="4" CornerRadius="4" Margin="4,0,30,0">
+                <Border DockPanel.Dock="Right" Background="#ff6663" TextElement.Foreground="White" Padding="4" CornerRadius="4" Margin="4,0,30,0">
                     <TextBlock Text="Bug"/>
                 </Border>
-                <Border Background="Pink" Padding="4" CornerRadius="4" HorizontalAlignment="Left">
+                <Border Background="#d9edff" Padding="4" CornerRadius="4" HorizontalAlignment="Left">
                     <TextBox Text="{Binding Content}" BorderThickness="0" Background="Transparent"/>
                 </Border>
             </DockPanel>
@@ -58,10 +58,10 @@
         <!-- Template only the contents within the Kanban item's tile. -->
         <DataTemplate x:Key="GreenTaskContentTemplate" DataType="{x:Type kl:KanbanItem}">
             <DockPanel>
-                <Border DockPanel.Dock="Left" Background="Green" TextElement.Foreground="White" Padding="4" CornerRadius="4" HorizontalAlignment="Left" Margin="4,0">
+                <Border DockPanel.Dock="Left" Background="#82a06a" TextElement.Foreground="White" Padding="4" CornerRadius="4" HorizontalAlignment="Left" Margin="4,0">
                     <TextBlock Text="{Binding Resources[0].Content}" MaxWidth="60" TextTrimming="CharacterEllipsis"/>
                 </Border>
-                <Border Background="LightGreen" Padding="4" CornerRadius="4" Margin="0,0,30,0">
+                <Border Background="	#afcb9b" Padding="4" CornerRadius="4" Margin="0,0,30,0">
                     <TextBox Text="{Binding Content}" BorderThickness="0" Background="Transparent"/>
                 </Border>
             </DockPanel>
@@ -71,17 +71,17 @@
             <Border Background="White" BorderBrush="Silver" BorderThickness="1" CornerRadius="8" Padding="4">
                 <DockPanel>
                     <Grid Name="PART_KanbanHandle" DockPanel.Dock="Top" Cursor="Hand" Margin="-4">
-                        <Rectangle Fill="Olive" Height="8" RadiusX="8" RadiusY="8"/>
-                        <Rectangle Fill="Olive" Height="4" VerticalAlignment="Bottom"/>
+                        <Rectangle Fill="#ebc363" Height="8" RadiusX="8" RadiusY="8"/>
+                        <Rectangle Fill="#ebc363" Height="4" VerticalAlignment="Bottom"/>
                     </Grid>
                     <WrapPanel Margin="0,8,0,0">
-                        <Border Background="LightGreen" Padding="4" CornerRadius="4" Margin="2">
+                        <Border Background="#afcb9b" Padding="4" CornerRadius="4" Margin="2">
                             <TextBox Text="{Binding Content}" BorderThickness="0" Background="Transparent" MaxWidth="120"/>
                         </Border>
                         <DatePicker SelectedDate="{Binding Tag.Start}" ToolTip="Start date" BorderThickness="0" Background="Transparent" Margin="2"/>
                         <TextBlock Text="-" Margin="0,2" VerticalAlignment="Center"/>
                         <DatePicker SelectedDate="{Binding Tag.Finish}" ToolTip="Finish date" BorderThickness="0" Background="Transparent" Margin="2"/>
-                        <Button Name="PART_KanbanButton" Content="Open" FontSize="10" Padding="3" Margin="2" Background="#80f08080" Width="60">
+                        <Button Name="PART_KanbanButton" Content="Open" FontSize="10" Padding="3" Margin="2" Background="#e1d7f5" Width="60">
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Grid Margin="{TemplateBinding Padding}">
