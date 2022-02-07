@@ -20,6 +20,8 @@ namespace KanbanBoardSample
         {
             InitializeComponent();
 
+            //KanbanBoard.BugItemType.Background = 
+
             var state1 = new KanbanState { Content = "New" };
             var state2 = new KanbanState { Content = "In progress", AreNewItemButtonsHidden = true };
             var state3 = new KanbanState { Content = "Ready to test", AreNewItemButtonsHidden = true };
@@ -29,7 +31,7 @@ namespace KanbanBoardSample
             var groupStates = new ObservableCollection<KanbanState> { state1, state2, state5 };
 
             var category1 = new KanbanCategory { Content = "Questions", Background = Brushes.CornflowerBlue, BorderBrush = Brushes.Blue, Foreground = Brushes.White };
-            var category2 = new KanbanCategory { Content = "Important", Background = Brushes.LightGreen, BorderBrush = Brushes.Green };
+            var category2 = new KanbanCategory { Content = "Important", Background = Brushes.LightPink, BorderBrush = Brushes.Green };
             var categories = new ObservableCollection<KanbanCategory> { category1, category2 };
 
             var resource1 = new KanbanResource { Content = "Clarissa Candelaria", ImageSource = new BitmapImage(new Uri("pack://application:,,,/KanbanBoardSample;component/Images/Clarissa.png", UriKind.RelativeOrAbsolute)) };
