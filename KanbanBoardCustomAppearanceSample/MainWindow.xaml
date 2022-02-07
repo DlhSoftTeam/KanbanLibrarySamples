@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:KanbanBoardCustomAppearanceSample"
         xmlns:kl="clr-namespace:KanbanLibrary;assembly=KanbanLibrary"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800">
+        Title="KanbanBoard custom appearance sample" Width="800" Height="442">
     <Grid>
         <!-- More appearance settings are defined in code behind. -->
         <kl:KanbanBoard Name="KanbanBoard" FontSize="13"

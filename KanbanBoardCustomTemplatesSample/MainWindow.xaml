@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:KanbanBoardCustomTemplatesSample"
         xmlns:kl="clr-namespace:KanbanLibrary;assembly=KanbanLibrary"
         mc:Ignorable="d"
-        Title="MainWindow" Height="480" Width="800">
+        Title="KanbanBoard custom templates sample" Width="800" Height="398">
     <Window.Resources>
         <DataTemplate x:Key="StateTemplate" DataType="{x:Type kl:KanbanState}">
             <Grid>
-                <Rectangle Fill="Silver" Height="1" VerticalAlignment="Center"/>
+                <Rectangle Fill="Silver" Height="1" Margin="0,12"/>
                 <TextBlock Text="{Binding Content}" Background="White" Padding="4,0" HorizontalAlignment="Center"/>
             </Grid>
             <DataTemplate.Triggers>
