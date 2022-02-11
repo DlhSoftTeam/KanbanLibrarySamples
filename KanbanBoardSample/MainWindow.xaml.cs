@@ -105,6 +105,8 @@ namespace KanbanBoardSample
             // {
             //     MessageBox.Show("Editing group " + e.Group.Content + "...");
             // };
+
+            // Or, customize behavior for Edit item menu command (when UsePopupMenus is true):
             KanbanBoard.EditingItem += (sender, e) =>
             {
                 var item = e.Item;

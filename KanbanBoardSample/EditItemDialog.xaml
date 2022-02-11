@@ -44,7 +44,8 @@
             <Setter Property="Margin" Value="10,6,6,6"/>
         </Style>
     </Window.Resources>
-    <Grid x:Name="ItemRoot" Margin="4,8" DataContext="{Binding Item, RelativeSource={RelativeSource AncestorType=Window}}">
+    <!-- Bind content to the Kanban item initialized for the current instance dialog. -->
+    <Grid x:Name="ItemRoot" DataContext="{Binding Item, RelativeSource={RelativeSource AncestorType=Window}}" Margin="4,8">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
