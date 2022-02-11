@@ -122,7 +122,7 @@
                                     </MultiBinding>
                                 </CheckBox.IsChecked>
                             </CheckBox>
-                            <Rectangle Fill="{Binding Background}" Stroke="{Binding BorderBrush}" RadiusX="3" RadiusY="3" Width="20" Height="20" VerticalAlignment="Center" Margin="3"/>
+                            <Rectangle Fill="{Binding Background}" Stroke="{Binding BorderBrush}" StrokeThickness="0.5" RadiusX="3" RadiusY="3" Width="20" Height="20" VerticalAlignment="Center" Margin="3"/>
                             <TextBlock Text="{Binding Content}" VerticalAlignment="Center"/>
                         </StackPanel>
                     </DataTemplate>
