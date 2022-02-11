@@ -7,6 +7,9 @@
         xmlns:kl="clr-namespace:KanbanLibrary;assembly=KanbanLibrary"
         mc:Ignorable="d"
         Title="KanbanBoard sample" Width="1350" Height="746">
+    <Window.Resources>
+       
+    </Window.Resources>
     <Grid>
         <kl:KanbanBoard Name="KanbanBoard"/>
     </Grid>

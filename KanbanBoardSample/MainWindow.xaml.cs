@@ -107,9 +107,16 @@ namespace KanbanBoardSample
             // {
             //     MessageBox.Show("Editing group " + e.Group.Content + "...");
             // };
+            //KanbanBoard.UsePopupMenus = false;
+            KanbanBoard.EditingItem += (sender, e) =>
+            {
+                var item = e.Item;
+                EditItemDialog editItemDialog = new EditItemDialog { Owner = Application.Current.MainWindow, Item = item, KanbanBoard = KanbanBoard };
+                editItemDialog.Show();
+            };
 
             // Otherwise, you may hide edit menu items instead:
-            KanbanBoard.AreEditMenuItemsHidden = true;
+            //KanbanBoard.AreEditMenuItemsHidden = true;
 
             KanbanBoard.ItemStateChanged += (sender, e) =>
             {
@@ -119,6 +126,12 @@ namespace KanbanBoardSample
             {
                 Console.WriteLine("Group of " + e.Item.Content + " was changed to " + e.Group.Content + ".");
             };
+        }
+
+        public struct TimeInterval
+        {
+            public DateTime Start { get; set; }
+            public DateTime Finish { get; set; }
         }
     }
 }

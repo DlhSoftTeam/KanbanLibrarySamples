@@ -1,0 +1,128 @@
+﻿<Window x:Class="KanbanBoardSample.EditItemDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KanbanBoardSample"
+        mc:Ignorable="d"
+        Title="Edit Task" SizeToContent="WidthAndHeight" WindowStyle="ToolWindow" WindowStartupLocation="CenterOwner">
+    <Window.Resources>
+        <local:KanbanResourceToBoolConverter x:Key="KanbanResourceToBoolConverter"/>
+        <local:KanbanCategoryToBoolConverter x:Key="KanbanCategoryToBoolConverter"/>
+        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Width" Value="64"/>
+            <Setter Property="Margin" Value="10,10,4,0"/>
+        </Style>
+        <Style x:Key="TextBoxStyle" TargetType="TextBox">
+            <Setter Property="Height" Value="24"/>
+            <Setter Property="Width" Value="170"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Margin" Value="4,6,10,6"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="ComboBoxStyle" TargetType="ComboBox">
+            <Setter Property="Height" Value="24"/>
+            <Setter Property="Width" Value="170"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Margin" Value="4,6,10,6"/>
+        </Style>
+        <Style x:Key="DatePickerStyle" TargetType="DatePicker">
+            <Setter Property="Height" Value="24"/>
+            <Setter Property="Width" Value="170"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Margin" Value="4,6,10,6"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+        <Style x:Key="ItemsControlStyle" TargetType="ItemsControl">
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Margin" Value="10,6,6,6"/>
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="ItemRoot" Margin="4,8" DataContext="{Binding Item, RelativeSource={RelativeSource AncestorType=Window}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="78"/>
+            <ColumnDefinition Width="184"/>
+            <ColumnDefinition Width="42"/>
+            <ColumnDefinition Width="184"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Task" Style="{StaticResource TextBlockStyle}"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Content}" Style="{StaticResource TextBoxStyle}"/>
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="Date" Style="{StaticResource TextBlockStyle}" Width="30"/>
+        <DatePicker Grid.Row="0" Grid.Column="3" SelectedDate="{Binding Date}" ToolTip="Start date" Style="{StaticResource DatePickerStyle}"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Description" Style="{StaticResource TextBlockStyle}"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding Description}"
+                 Style="{StaticResource TextBoxStyle}" Width="396" Height="64" VerticalContentAlignment="Top"
+                 AcceptsReturn="True" AcceptsTab="True" TextWrapping="Wrap"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Group" Style="{StaticResource TextBlockStyle}"/>
+        <ComboBox Name="ItemGroupComboBox" Grid.Row="2" Grid.Column="1"
+                  ItemsSource="{Binding KanbanBoard.Groups, RelativeSource={RelativeSource AncestorType=Window}}"
+                  DisplayMemberPath="Content" SelectedItem="{Binding Group, Mode=OneWay}"
+                  Style="{StaticResource ComboBoxStyle}" SelectionChanged="ItemGroupComboBox_SelectionChanged"/>
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="State" Style="{StaticResource TextBlockStyle}" Width="30"/>
+        <ComboBox Name="ItemStateComboBox" Grid.Row="2" Grid.Column="3" 
+                  ItemsSource="{Binding KanbanBoard.States, RelativeSource={RelativeSource AncestorType=Window}}"
+                  DisplayMemberPath="Content" SelectedItem="{Binding State, Mode=OneWay}"
+                  Style="{StaticResource ComboBoxStyle}" SelectionChanged="ItemStateComboBox_SelectionChanged"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Resources" Style="{StaticResource TextBlockStyle}"/>
+        <ItemsControl Name="ItemResourcesItemsControl" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                      ItemsSource="{Binding KanbanBoard.AvailableResources, RelativeSource={RelativeSource AncestorType=Window}}"
+                      Style="{StaticResource ItemsControlStyle}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox x:Name="ItemResourceCheckBox" VerticalAlignment="Center"
+                                  Checked="ItemResourceCheckBox_Checked" Unchecked="ItemResourceCheckBox_Unchecked">
+                            <CheckBox.IsChecked>
+                                <MultiBinding Converter="{StaticResource KanbanResourceToBoolConverter}" Mode="OneWay">
+                                    <Binding Path="DataContext.Resources" ElementName="ItemRoot"/>
+                                    <Binding/>
+                                    <!-- Also refresh when resources are added or removed externally. -->
+                                    <Binding Path="DataContext.Resources.Count" ElementName="ItemRoot"/>
+                                </MultiBinding>
+                            </CheckBox.IsChecked>
+                        </CheckBox>
+                        <Image Source="{Binding ImageSource}" Width="24" Height="24" VerticalAlignment="Top" Margin="3"/>
+                        <TextBlock Text="{Binding Content}" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <TextBlock Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Text="Categories" Style="{StaticResource TextBlockStyle}"/>
+        <ItemsControl Name="ItemCategoriesItemsControl" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2"
+                      ItemsSource="{Binding KanbanBoard.AvailableCategories, RelativeSource={RelativeSource AncestorType=Window}}"
+                      Style="{StaticResource ItemsControlStyle}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox x:Name="ItemCategoryCheckBox" VerticalAlignment="Center"
+                                  Checked="ItemCategoryCheckBox_Checked" Unchecked="ItemCategoryCheckBox_Unchecked">
+                            <CheckBox.IsChecked>
+                                <MultiBinding Converter="{StaticResource KanbanCategoryToBoolConverter}" Mode="OneWay">
+                                    <Binding Path="DataContext.Categories" ElementName="ItemRoot"/>
+                                    <Binding/>
+                                    <!-- Also refresh when categories are added or removed externally. -->
+                                    <Binding Path="DataContext.Categories.Count" ElementName="ItemRoot"/>
+                                </MultiBinding>
+                            </CheckBox.IsChecked>
+                        </CheckBox>
+                        <Rectangle Fill="{Binding Background}" Stroke="{Binding BorderBrush}" RadiusX="3" RadiusY="3" Width="20" Height="20" VerticalAlignment="Center" Margin="3"/>
+                        <TextBlock Text="{Binding Content}" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</Window>
