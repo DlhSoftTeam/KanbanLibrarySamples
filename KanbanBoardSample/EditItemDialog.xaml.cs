@@ -41,28 +41,32 @@ namespace KanbanBoardSample
 
         private void ItemResourceCheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            KanbanResource resource = (KanbanResource)((CheckBox)sender).DataContext;
+            var checkBox = sender as CheckBox;
+            var resource = checkBox.DataContext as KanbanResource;
             if (!Item.Resources.Contains(resource))
                 Item.Resources.Add(resource);
         }
 
         private void ItemResourceCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            KanbanResource resource = (KanbanResource)((CheckBox)sender).DataContext;
+            var checkBox = sender as CheckBox;
+            var resource = checkBox.DataContext as KanbanResource;
             if (Item.Resources.Contains(resource))
                 Item.Resources.Remove(resource);
         }
 
         private void ItemCategoryCheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            KanbanCategory category = (KanbanCategory)((CheckBox)sender).DataContext;
+            var checkBox = sender as CheckBox;
+            var category = checkBox.DataContext as KanbanCategory;
             if (!Item.Categories.Contains(category))
                 Item.Categories.Add(category);
         }
 
         private void ItemCategoryCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            KanbanCategory category = (KanbanCategory)((CheckBox)sender).DataContext;
+            var checkBox = sender as CheckBox;
+            var category = checkBox.DataContext as KanbanCategory;
             if (Item.Categories.Contains(category))
                 Item.Categories.Remove(category);
         }

@@ -50,13 +50,13 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="78"/>
-            <ColumnDefinition Width="184"/>
-            <ColumnDefinition Width="42"/>
-            <ColumnDefinition Width="184"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Task" Style="{StaticResource TextBlockStyle}"/>
         <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Content}" Style="{StaticResource TextBoxStyle}"/>
@@ -64,7 +64,7 @@
         <DatePicker Grid.Row="0" Grid.Column="3" SelectedDate="{Binding Date}" ToolTip="Start date" Style="{StaticResource DatePickerStyle}"/>
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Description" Style="{StaticResource TextBlockStyle}"/>
         <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding Description}"
-                 Style="{StaticResource TextBoxStyle}" Width="396" Height="64" VerticalContentAlignment="Top"
+                 Style="{StaticResource TextBoxStyle}" Width="398" Height="64" VerticalContentAlignment="Top"
                  AcceptsReturn="True" AcceptsTab="True" TextWrapping="Wrap"/>
         <TextBlock Grid.Row="2" Grid.Column="0" Text="Group" Style="{StaticResource TextBlockStyle}"/>
         <ComboBox Name="ItemGroupComboBox" Grid.Row="2" Grid.Column="1"
@@ -77,7 +77,8 @@
                   DisplayMemberPath="Content" SelectedItem="{Binding State, Mode=OneWay}"
                   Style="{StaticResource ComboBoxStyle}" SelectionChanged="ItemStateComboBox_SelectionChanged"/>
         <TextBlock Grid.Row="3" Grid.Column="0" Text="Resources" Style="{StaticResource TextBlockStyle}"/>
-        <ItemsControl Name="ItemResourcesItemsControl" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
+            <ItemsControl Name="ItemResourcesItemsControl"
                       ItemsSource="{Binding KanbanBoard.AvailableResources, RelativeSource={RelativeSource AncestorType=Window}}"
                       Style="{StaticResource ItemsControlStyle}">
             <ItemsControl.ItemTemplate>
@@ -100,29 +101,32 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
+        </ScrollViewer>
         <TextBlock Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Text="Categories" Style="{StaticResource TextBlockStyle}"/>
-        <ItemsControl Name="ItemCategoriesItemsControl" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2"
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2">
+            <ItemsControl Name="ItemCategoriesItemsControl"
                       ItemsSource="{Binding KanbanBoard.AvailableCategories, RelativeSource={RelativeSource AncestorType=Window}}"
                       Style="{StaticResource ItemsControlStyle}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <CheckBox x:Name="ItemCategoryCheckBox" VerticalAlignment="Center"
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox x:Name="ItemCategoryCheckBox" VerticalAlignment="Center"
                                   Checked="ItemCategoryCheckBox_Checked" Unchecked="ItemCategoryCheckBox_Unchecked">
-                            <CheckBox.IsChecked>
-                                <MultiBinding Converter="{StaticResource KanbanCategoryToBoolConverter}" Mode="OneWay">
-                                    <Binding Path="DataContext.Categories" ElementName="ItemRoot"/>
-                                    <Binding/>
-                                    <!-- Also refresh when categories are added or removed externally. -->
-                                    <Binding Path="DataContext.Categories.Count" ElementName="ItemRoot"/>
-                                </MultiBinding>
-                            </CheckBox.IsChecked>
-                        </CheckBox>
-                        <Rectangle Fill="{Binding Background}" Stroke="{Binding BorderBrush}" RadiusX="3" RadiusY="3" Width="20" Height="20" VerticalAlignment="Center" Margin="3"/>
-                        <TextBlock Text="{Binding Content}" VerticalAlignment="Center"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+                                <CheckBox.IsChecked>
+                                    <MultiBinding Converter="{StaticResource KanbanCategoryToBoolConverter}" Mode="OneWay">
+                                        <Binding Path="DataContext.Categories" ElementName="ItemRoot"/>
+                                        <Binding/>
+                                        <!-- Also refresh when categories are added or removed externally. -->
+                                        <Binding Path="DataContext.Categories.Count" ElementName="ItemRoot"/>
+                                    </MultiBinding>
+                                </CheckBox.IsChecked>
+                            </CheckBox>
+                            <Rectangle Fill="{Binding Background}" Stroke="{Binding BorderBrush}" RadiusX="3" RadiusY="3" Width="20" Height="20" VerticalAlignment="Center" Margin="3"/>
+                            <TextBlock Text="{Binding Content}" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
     </Grid>
 </Window>

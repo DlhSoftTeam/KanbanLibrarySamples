@@ -12,8 +12,8 @@ namespace KanbanBoardSample
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            ObservableCollection<KanbanResource> resources = (ObservableCollection<KanbanResource>)values[0];
-            KanbanResource resource = (KanbanResource)values[1];
+            var resources = values[0] as ObservableCollection<KanbanResource>;
+            var resource = values[1] as KanbanResource;
 
             return resources.Contains(resource);
         }
