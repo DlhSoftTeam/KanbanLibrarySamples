@@ -113,6 +113,20 @@ namespace KanbanBoardSample
                 var editItemDialog = new EditItemDialog { Owner = Application.Current.MainWindow, Item = item, KanbanBoard = KanbanBoard };
                 editItemDialog.Show();
             };
+            KanbanBoard.AreEditGroupMenuItemsHidden = true;
+
+            KanbanBoard.DeletingItem += (sender, e) =>
+            {
+                var item = e.Item;
+                if (MessageBox.Show("Are you sure you want to delete item " + item.Content + "?", "Kanban", MessageBoxButton.YesNo, MessageBoxImage.Warning) != MessageBoxResult.Yes)
+                    e.Cancel = true;
+            };
+            KanbanBoard.DeletingGroup += (sender, e) =>
+            {
+                var group = e.Group;
+                if (MessageBox.Show("Are you sure you want to delete group " + group.Content + "?", "Kanban", MessageBoxButton.YesNo, MessageBoxImage.Warning) != MessageBoxResult.Yes)
+                    e.Cancel = true;
+            };
 
             KanbanBoard.ItemStateChanged += (sender, e) =>
             {

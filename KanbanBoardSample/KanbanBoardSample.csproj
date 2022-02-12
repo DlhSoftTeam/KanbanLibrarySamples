@@ -20,7 +20,7 @@
   </ItemGroup>
 	
   <ItemGroup>
-	<PackageReference Include="DlhSoft.KanbanLibrary.wpf" Version="4.0.0.30" />
+	<PackageReference Include="DlhSoft.KanbanLibrary.wpf" Version="4.0.0.31" />
   </ItemGroup>
 	
   <ItemGroup>
