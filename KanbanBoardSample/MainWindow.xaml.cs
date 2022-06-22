@@ -20,8 +20,8 @@ namespace KanbanBoardSample
         {
             InitializeComponent();
 
-            var state1 = new KanbanState { Content = "New" };
-            var state2 = new KanbanState { Content = "In progress", AreNewItemButtonsHidden = true };
+            var state1 = new KanbanState { Content = "New", IsCollapsed = true };
+            var state2 = new KanbanState { Content = "In progress", AreNewItemButtonsHidden = true, IsCollapsible = false };
             var state3 = new KanbanState { Content = "Ready to test", AreNewItemButtonsHidden = true };
             var state4 = new KanbanState { Content = "In testing", AreNewItemButtonsHidden = true };
             var state5 = new KanbanState { Content = "Done", IsCollapsedByDefaultForGroups = true, AreNewItemButtonsHidden = true };
@@ -81,6 +81,8 @@ namespace KanbanBoardSample
             KanbanBoard.AvailableCategories = categories;
             KanbanBoard.AvailableResources = resources;
             KanbanBoard.GroupStates = groupStates;
+
+            KanbanBoard.AreStateExpandersVisible = true;
 
             KanbanBoard.NewItemAdded += (sender, e) =>
             {
