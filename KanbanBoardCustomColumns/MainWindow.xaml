@@ -1,0 +1,49 @@
+﻿<Window x:Class="KanbanBoardCustomColumnsSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:kl="clr-namespace:KanbanLibrary;assembly=KanbanLibrary"
+        xmlns:local="clr-namespace:KanbanBoardCustomColumnsSample"
+        mc:Ignorable="d"
+        Title="KanbanBoard Custom Columns Sample" Width="1350" Height="746">
+    <DockPanel>
+        <Border DockPanel.Dock="Top" Style="{StaticResource RibbonContainerStyle}">
+            <StackPanel Style="{StaticResource RibbonStyle}">
+                <Border Style="{StaticResource RibbonPanelStyle}">
+                    <StackPanel>
+                        <ContentControl Content="Columns" Style="{StaticResource RibbonHeaderStyle}"/>
+                        <StackPanel Style="{StaticResource RibbonCommandsAreaStyle}">
+                            <Button Name="EditColumnsButton" Click="EditColumnsButton_Click">
+                                <StackPanel>
+                                    <Image Source="Images/column_edit.png" Height="24" Width="24" Margin="0,4,0,0"/>
+                                    <Label Content="Edit columns" HorizontalContentAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <Border Style="{StaticResource RibbonPanelStyle}">
+                    <StackPanel>
+                        <ContentControl Content="Search" Style="{StaticResource RibbonHeaderStyle}"/>
+                        <StackPanel Style="{StaticResource RibbonCommandsAreaStyle}" Orientation="Vertical">
+                            <TextBox x:Name="SearchTextBox" VerticalAlignment="Center" Width="148" Style="{StaticResource TextBoxEdit}" KeyDown="SearchTextBox_KeyDown"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Name="SearchContentButton" Click="SearchContentButton_Click" Height="24">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="Images/search.png" Height="18" Width="18"/>
+                                        <Label Content="Search in content" Padding="5,0"/> 
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Border>
+        <kl:KanbanBoard Name="KanbanBoard" Background="#f9f9f9" ItemAreaBackground="#90f3f6f4"
+            BorderBrush="#6485c5" BorderThickness="1" Padding="1"
+            ItemBorderBrush="#6485c5" ItemBorderThickness="1"
+            StateHoveringBackground="#e0e0e0" GroupHoveringBackground="#616d85"/>
+    </DockPanel>
+</Window>

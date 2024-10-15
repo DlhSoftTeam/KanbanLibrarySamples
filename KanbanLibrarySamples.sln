@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31727.386
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KanbanBoardSample", "KanbanBoardSample\KanbanBoardSample.csproj", "{DA72477F-BEDE-4A86-AB31-C62B61256E6F}"
 EndProject
@@ -10,6 +10,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KanbanBoardCustomAppearanceSample", "KanbanBoardCustomAppearanceSample\KanbanBoardCustomAppearanceSample.csproj", "{672346A5-8C6B-4797-906A-05B04DC25688}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KanbanBoardCustomTemplatesSample", "KanbanBoardCustomTemplatesSample\KanbanBoardCustomTemplatesSample.csproj", "{1317A10E-AF53-43B9-8BDD-5D43E5DBA61E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KanbanBoardCustomColumnsSample", "KanbanBoardCustomColumns\KanbanBoardCustomColumnsSample.csproj", "{13EF1814-3D2C-494A-819C-B2AF141A52F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KanbanBoardSortingByPriority", "KanbanSortingByPriority\KanbanBoardSortingByPriority.csproj", "{34168C3C-5B87-4075-8790-5954428AA44D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{1317A10E-AF53-43B9-8BDD-5D43E5DBA61E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1317A10E-AF53-43B9-8BDD-5D43E5DBA61E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1317A10E-AF53-43B9-8BDD-5D43E5DBA61E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13EF1814-3D2C-494A-819C-B2AF141A52F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13EF1814-3D2C-494A-819C-B2AF141A52F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13EF1814-3D2C-494A-819C-B2AF141A52F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13EF1814-3D2C-494A-819C-B2AF141A52F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34168C3C-5B87-4075-8790-5954428AA44D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34168C3C-5B87-4075-8790-5954428AA44D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34168C3C-5B87-4075-8790-5954428AA44D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34168C3C-5B87-4075-8790-5954428AA44D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
