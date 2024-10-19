@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-	<PackageReference Include="DlhSoft.GanttChartLightLibrary" Version="4.3.45.13" />
-    <PackageReference Include="DlhSoft.KanbanLibrary.wpf" Version="4.1.0" />
+	<PackageReference Include="DlhSoft.GanttChartLightLibrary" Version="4.3.48.14" />
+    <PackageReference Include="DlhSoft.KanbanLibrary.wpf" Version="4.2.8" />
   </ItemGroup>
 
 </Project>

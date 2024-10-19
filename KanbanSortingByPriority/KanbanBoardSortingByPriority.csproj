@@ -1,38 +1,41 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <EnableNETAnalyzers>False</EnableNETAnalyzers>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\alert.png" />
     <None Remove="Images\Architecture.png" />
-    <None Remove="Images\Bug.png" />
     <None Remove="Images\Clarissa.png" />
     <None Remove="Images\DateTimes.png" />
+    <None Remove="Images\flag.png" />
     <None Remove="Images\Jed.png" />
     <None Remove="Images\Joanna.png" />
-    <None Remove="Images\Marketing.png" />
+    <None Remove="Images\search.png" />
     <None Remove="Images\Tyson.png" />
     <None Remove="Images\WebSite.png" />
   </ItemGroup>
-	
+
   <ItemGroup>
-	<PackageReference Include="DlhSoft.KanbanLibrary.wpf" Version="4.2.8" />
+    <PackageReference Include="DlhSoft.KanbanLibrary.wpf" Version="4.2.8" />
   </ItemGroup>
-	
+
   <ItemGroup>
+    <Resource Include="Images\alert.png" />
     <Resource Include="Images\Architecture.png" />
-    <Resource Include="Images\Bug.png" />
     <Resource Include="Images\Clarissa.png" />
     <Resource Include="Images\DateTimes.png" />
-    <Resource Include="Images\WebSite.png" />
+    <Resource Include="Images\flag.png" />
     <Resource Include="Images\Jed.png" />
     <Resource Include="Images\Joanna.png" />
-    <Resource Include="Images\Marketing.png" />
+    <Resource Include="Images\search.png" />
     <Resource Include="Images\Tyson.png" />
+    <Resource Include="Images\WebSite.png" />
   </ItemGroup>
 
 </Project>
