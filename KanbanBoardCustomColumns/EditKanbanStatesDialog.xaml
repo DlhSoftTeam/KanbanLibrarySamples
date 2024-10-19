@@ -22,7 +22,7 @@
                     </MultiBinding>
                 </Button.IsEnabled>
                 <StackPanel>
-                    <Image Source="Images/dismiss_circle.png" Width="18" Height="18"/>
+                    <Image Source="Images/dismiss_circle.png" Width="16" Height="16"/>
                     <TextBlock Text="Delete"/>
                 </StackPanel>
             </Button>
@@ -34,7 +34,7 @@
                     </MultiBinding>
                 </Button.IsEnabled>
                 <StackPanel>
-                    <Image Source="Images/arrow_circle_up.png" Width="18" Height="18"/>
+                    <Image Source="Images/arrow_circle_up.png" Width="16" Height="16"/>
                     <TextBlock Text="Move up"/>
                 </StackPanel>
             </Button>
@@ -46,7 +46,7 @@
                     </MultiBinding>
                 </Button.IsEnabled>
                 <StackPanel>
-                    <Image Source="Images/arrow_circle_down.png" Width="18" Height="18"/>
+                    <Image Source="Images/arrow_circle_down.png" Width="16" Height="16"/>
                     <TextBlock Text="Move down"/>
                 </StackPanel>
             </Button>

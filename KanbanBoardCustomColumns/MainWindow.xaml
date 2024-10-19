@@ -25,13 +25,13 @@
                 </Border>
                 <Border Style="{StaticResource RibbonPanelStyle}">
                     <StackPanel>
-                        <ContentControl Content="Search" Style="{StaticResource RibbonHeaderStyle}"/>
+                        <ContentControl Content="Filtering" Style="{StaticResource RibbonHeaderStyle}"/>
                         <StackPanel Style="{StaticResource RibbonCommandsAreaStyle}" Orientation="Vertical">
                             <TextBox x:Name="SearchTextBox" VerticalAlignment="Center" Width="148" Style="{StaticResource TextBoxEdit}" KeyDown="SearchTextBox_KeyDown"/>
                             <StackPanel Orientation="Horizontal">
                                 <Button Name="SearchContentButton" Click="SearchContentButton_Click" Height="24">
                                     <StackPanel Orientation="Horizontal">
-                                        <Image Source="Images/search.png" Height="18" Width="18"/>
+                                        <Image Source="Images/search.png" Height="16" Width="16"/>
                                         <Label Content="Search in content" Padding="5,0"/> 
                                     </StackPanel>
                                 </Button>

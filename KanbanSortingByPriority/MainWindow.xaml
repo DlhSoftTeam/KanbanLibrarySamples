@@ -12,13 +12,13 @@
             <StackPanel Style="{StaticResource RibbonStyle}">
                 <Border Style="{StaticResource RibbonPanelStyle}">
                     <StackPanel>
-                        <ContentControl Content="Sorting by priority" Style="{StaticResource RibbonHeaderStyle}"/>
+                        <ContentControl Content="Sorting" Style="{StaticResource RibbonHeaderStyle}"/>
                         <StackPanel Style="{StaticResource RibbonCommandsAreaStyle}">
                             <ComboBox Name="SortingKanban" SelectionChanged="SortingKanban_SelectionChanged" Style="{StaticResource ComboBoxEdit}">
                                 <ComboBox.Items>
-                                    <ComboBoxItem Tag="NoSorting" Content="No Sorting" IsSelected="True"/>
-                                    <ComboBoxItem Tag="PriorityAsc" Content="Priority (lowest first)"/>
-                                    <ComboBoxItem Tag="PriorityDesc" Content="Priority (highest first)"/>
+                                    <ComboBoxItem Tag="NoSorting" Content="None" IsSelected="True"/>
+                                    <ComboBoxItem Tag="PriorityAsc" Content="By priority (lowest first)"/>
+                                    <ComboBoxItem Tag="PriorityDesc" Content="By priority (highest first)"/>
                                 </ComboBox.Items>
                             </ComboBox>
                         </StackPanel>
@@ -26,12 +26,12 @@
                 </Border>
                 <Border Style="{StaticResource RibbonPanelStyle}">
                     <StackPanel>
-                        <ContentControl Content="Search in content" Style="{StaticResource RibbonHeaderStyle}"/>
+                        <ContentControl Content="Filtering" Style="{StaticResource RibbonHeaderStyle}"/>
                         <StackPanel Style="{StaticResource RibbonCommandsAreaStyle}">
                             <TextBox x:Name="SearchTextBox" VerticalAlignment="Center" Style="{StaticResource TextBoxEdit}" KeyDown="SearchTextBox_KeyDown"/>
                             <Button Name="SearchColumnsButton" Click="SearchColumnsButton_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Image Source="Images/search.png" Height="18" Width="18"/>
+                                    <Image Source="Images/search.png" Height="16" Width="16"/>
                                     <Label Content="Search in content" Padding="5,0"/>
                                 </StackPanel>
                             </Button>
