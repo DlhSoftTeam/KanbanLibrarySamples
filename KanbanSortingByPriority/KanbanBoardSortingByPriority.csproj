@@ -3,9 +3,8 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
-    <EnableNETAnalyzers>False</EnableNETAnalyzers>
+	<Platforms>AnyCPU;x86</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
