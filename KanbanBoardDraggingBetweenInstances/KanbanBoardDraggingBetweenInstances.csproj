@@ -1,12 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <OutputType>Library</OutputType>
+    <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
     <Platforms>AnyCPU;x86</Platforms>
   </PropertyGroup>
-	
+
+
   <ItemGroup>
 	<PackageReference Include="DlhSoft.KanbanLibrary.wpf" Version="4.2.8" />
   </ItemGroup>
